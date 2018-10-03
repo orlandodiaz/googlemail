@@ -1,0 +1,7 @@
+import os
+
+EMAIL = os.environ['GOOGLEMAIL_EMAIL']
+PASSWORD = os.environ['GOOGLEMAIL_PASSWORD']
+
+TEST_EMAIL = os.environ['GOOGLEMAIL_TESTEMAIL']
+

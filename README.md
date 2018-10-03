@@ -1,14 +1,14 @@
 ### Description
-High-level interface for sending email through gmail.
+High-level interface for sending email through googlemail.
 
 ### Usage
 
-Create cred.py and fill in your email and password credentials. Ex:
+Create conf.py and fill in your email and password credentials. Ex:
 
     email = 'your.email@gmail.com'
     password = 'your.pass'   
 
-Create gmail object:
+Create googlemail object:
     
     gmail = Gmail(email, password)
     
