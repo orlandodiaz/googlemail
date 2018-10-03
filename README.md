@@ -31,4 +31,12 @@ Create googlemail object:
  Send the message
  
     gmail.send_msg(mail_template)
-    
+
+## Testing
+To run the tests you need to configure the sender username, password, and recipient email
+
+    $ export GOOGLEMAIL_EMAIL=<YOUR SENDER EMAIL>
+    $ export GOOGLEMAIL_PASSWORD=<YOUR SENDER PASSWORD>
+
+    $ export GOOGLEMAIL_TESTEMAIL=<YOUR TEST RECIPIENT EMAIL>
+
