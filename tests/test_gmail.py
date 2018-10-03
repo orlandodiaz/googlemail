@@ -13,7 +13,7 @@ def gmail():
 def test_send_msg_with_template(gmail):
     mail_template = {
         'to': TEST_EMAIL,
-        'subject': 'test_send_msg_with_template::PASSED',
+        'subject': 'googlemail::test_send_msg_with_template::PASSED',
         'body':
         """
         googlemail::test_send_msg_with_template::PASSED
