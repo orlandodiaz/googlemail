@@ -5,6 +5,7 @@ from email.mime.multipart  import MIMEMultipart
 from email.mime.text import MIMEText
 from textwrap import dedent
 from smtplib import SMTPAuthenticationError, SMTPSenderRefused
+from .exceptions import UnknownLoginLocation, BadCredentials
 if __name__ == '__main__':
     from config import log
 else:
@@ -56,14 +57,15 @@ class Gmail(object):
         try:
             self.server.login(self.GMAIL_USERNAME, self.GMAIL_PASSWORD)
         except SMTPAuthenticationError as ex:
-            # print(ex)
-            log.error("Username or password is incorrect")
-            log.error("GOOGLEMAIL_EMAIL: {}".format(os.environ['GOOGLEMAIL_EMAIL']))
-            log.error("GOOGLEMAIL_PASSWORD: {}".format(os.environ['GOOGLEMAIL_PASSWORD']))
-            log.error("GOOGLEMAIL_TESTMAIL: {}".format(os.environ['GOOGLEMAIL_TESTEMAIL']))
+            if ex.smtp_code == 534:
+                raise UnknownLoginLocation
+            if ex.smtp_code == 535:
+                log.error("Username or password is incorrect")
+                log.debug("GOOGLEMAIL_EMAIL: {}".format(os.environ['GOOGLEMAIL_EMAIL']))
+                log.debug("GOOGLEMAIL_PASSWORD: {}".format(os.environ['GOOGLEMAIL_PASSWORD']))
+                log.debug("GOOGLEMAIL_TESTMAIL: {}".format(os.environ['GOOGLEMAIL_TESTEMAIL']))
+                raise BadCredentials
 
-
-            raise
         except SMTPSenderRefused as ex:
             log.error("Google blocking login. Go to your gmail and allow access from this location")
             raise
