@@ -35,7 +35,8 @@ Create googlemail object:
     gmail.send_msg(mail_template)
 
 ## Testing
-To run the tests you need to configure the sender username, password, and recipient email
+To run the tests you need to configure the sender username, password, and recipient email. You can test locally or use a continous integration service like Jenkins
+which allow you to host using a fixed static IPs. Travis-CI does their tests on multiple server causing Google to flag the account, making the tests worthless
 
     $ export GOOGLEMAIL_EMAIL=<YOUR SENDER EMAIL>
     $ export GOOGLEMAIL_PASSWORD=<YOUR SENDER PASSWORD>
