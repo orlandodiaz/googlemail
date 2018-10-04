@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/orlandodiaz/googlemail.svg?branch=master)](https://travis-ci.com/orlandodiaz/googlemail)
-
 ### Description
 High-level interface for sending email through googlemail.
 
