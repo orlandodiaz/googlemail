@@ -61,9 +61,6 @@ class Gmail(object):
                 raise UnknownLoginLocation
             if ex.smtp_code == 535:
                 log.error("Username or password is incorrect")
-                log.debug("GOOGLEMAIL_EMAIL: {}".format(os.environ['GOOGLEMAIL_EMAIL']))
-                log.debug("GOOGLEMAIL_PASSWORD: {}".format(os.environ['GOOGLEMAIL_PASSWORD']))
-                log.debug("GOOGLEMAIL_TESTMAIL: {}".format(os.environ['GOOGLEMAIL_TESTEMAIL']))
                 raise BadCredentials
 
         except SMTPSenderRefused as ex:
