@@ -1,5 +1,5 @@
 from conf import EMAIL, PASSWORD, TEST_EMAIL
-from googlemail import Gmail
+from googlemail.gmail import Gmail
 import pytest
 
 @pytest.fixture(scope="class")
