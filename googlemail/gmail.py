@@ -58,9 +58,9 @@ class Gmail(object):
         except SMTPAuthenticationError as ex:
             # print(ex)
             log.error("Username or password is incorrect")
-            log.debug("GOOGLEMAIL_EMAIL: {}".format(os.environ['GOOGLEMAIL_EMAIL']))
-            log.debug("GOOGLEMAIL_PASSWORD: {}".format(os.environ['GOOGLEMAIL_PASSWORD']))
-            log.debug("GOOGLEMAIL_TESTMAIL: {}".format(os.environ['GOOGLEMAIL_TESTEMAIL']))
+            log.error("GOOGLEMAIL_EMAIL: {}".format(os.environ['GOOGLEMAIL_EMAIL']))
+            log.error("GOOGLEMAIL_PASSWORD: {}".format(os.environ['GOOGLEMAIL_PASSWORD']))
+            log.error("GOOGLEMAIL_TESTMAIL: {}".format(os.environ['GOOGLEMAIL_TESTEMAIL']))
 
 
             raise
