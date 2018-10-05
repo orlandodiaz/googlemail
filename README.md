@@ -1,3 +1,8 @@
+- [Description](#description)
+- [Usage](#usage)
+- [Testing](#testing)
+
+
 ### Description
 High-level interface for sending email through googlemail.
 
