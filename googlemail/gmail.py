@@ -51,7 +51,16 @@ class Gmail(object):
             log.debug("Server started with host {} and port {}".format(self.host, self.port))
 
     def login(self):
-        """ Try and log in into googlemail """
+        """
+        Try and log in into googlemail
+
+        Returns:
+
+        Raises:
+            UnknownLoginLocation: User is loggin in from an unauthorized unknown device
+            BadCredentials: Username or password is incorrect
+
+        """
 
         log.info('Logging in to googlemail server as {}'.format(self.GMAIL_USERNAME))
         try:
@@ -71,7 +80,14 @@ class Gmail(object):
             self.is_loggedin = True
 
     def send_msg_with_template(self, template):
-        """ Send message with given template"""
+        """ Send message with given template
+
+        Args:
+            template:
+
+        Returns:
+
+        """
 
         # Store information to the msg MIME object
         msg = MIMEMultipart()
