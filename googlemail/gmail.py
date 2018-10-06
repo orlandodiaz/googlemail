@@ -13,9 +13,14 @@ else:
 
 
 class Gmail(object):
-    """Higher level SMTP object for sending emails through gmail"""
+    """ Higher level SMTP object for sending emails through gmail """
 
     def __init__(self, user, password):
+        """
+        Args:
+            user (str): The e-mail used to login to your gmail account
+            password (str): The password you use to login to your gmail
+        """
         self.GMAIL_USERNAME = user
         self.GMAIL_PASSWORD = password
 
@@ -51,13 +56,10 @@ class Gmail(object):
             log.debug("Server started with host {} and port {}".format(self.host, self.port))
 
     def login(self):
-        """
-        Try and log in into googlemail
-
-        Returns:
+        """ Login to google servers
 
         Raises:
-            UnknownLoginLocation: User is loggin in from an unauthorized unknown device
+            UnknownLoginLocation: User is trying to in from an unauthorized unknown device
             BadCredentials: Username or password is incorrect
 
         """
@@ -80,13 +82,21 @@ class Gmail(object):
             self.is_loggedin = True
 
     def send_msg_with_template(self, template):
-        """ Send message with given template
+        """ Send an -mail using a custom formatted template.
 
         Args:
-            template:
+            template (dict): E-mail template
 
-        Returns:
-
+        Examples:
+            mail_template = {
+                'to': TEST_EMAIL,
+                'subject': 'The subject of the email',
+                'body':
+                '''
+                My body
+                '''
+            }
+            gmail.send_msg_with_template(mail_template)
         """
 
         # Store information to the msg MIME object
