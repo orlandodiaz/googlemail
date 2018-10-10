@@ -1,11 +1,14 @@
+# googlemail
+[![image](https://img.shields.io/pypi/v/googlemail.svg)](https://pypi.org/project/googlemail/)
+[![image](https://img.shields.io/pypi/pyversions/googlemail.svg)](https://pypi.org/project/googlemail/)
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+### Description
+High-level interface for sending email through googlemail.
+
 ### TOC
-- [Description](#description)
 - [Usage](#usage)
 - [Testing](#testing)
 
-
-### Description
-High-level interface for sending email through googlemail.
 
 ### Usage
 
